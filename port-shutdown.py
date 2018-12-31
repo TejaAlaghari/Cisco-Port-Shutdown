@@ -270,7 +270,7 @@ def test_device(session,ipaddress):
 	
 		return (False,"{}:   Cannot determine device uptime".format(ipaddress),"","")	
 
-	if device_days_up < 60:
+	if device_days_up < 0:
 		
 		
 		skippedswitches_days += 1
@@ -388,7 +388,7 @@ def daysdown_test(inputlist,device_days_up,device_unixdays,session,ipaddress):
 				outputlist.append(interface)
 				customPrint ("{}:    {} unreliable dtp. Adding".format(ipaddress,interface))
 			
-			elif (int_days_down >= 60):
+			elif (int_days_down >= 0):
 					
 				outputlist.append(interface)
 				customPrint ("{}:    {} down {} days. Adding".format(ipaddress,interface,int_days_down))
